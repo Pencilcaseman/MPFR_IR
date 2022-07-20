@@ -68,3 +68,5 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
  * it was not previously defined.                               *
  ****************************************************************/
 #include "../src/generic/mparam.h"
+
+#include "endian.h"
