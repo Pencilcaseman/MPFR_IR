@@ -1,0 +1,10 @@
+^C:\OPT\MPFR\BUILD\CMAKEFILES\A62DE8E16CC7DB94E44EF4FD69191D68\GENERATE.STAMP.RULE
+setlocal
+C:\opt\cmake\bin\cmake.exe -SC:/opt/mpfr -BC:/opt/mpfr/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/opt/mpfr/build/mpfr.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

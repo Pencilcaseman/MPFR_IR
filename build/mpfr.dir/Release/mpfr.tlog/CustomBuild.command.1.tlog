@@ -1,0 +1,10 @@
+^C:\OPT\MPFR\CMAKELISTS.TXT
+setlocal
+C:\opt\cmake\bin\cmake.exe -SC:/opt/mpfr -BC:/opt/mpfr/build --check-stamp-file C:/opt/mpfr/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
