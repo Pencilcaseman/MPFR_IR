@@ -266,6 +266,8 @@ set(PROJECT_SOURCES
 
 add_library(${MODULE_NAME} STATIC ${PROJECT_SOURCES})
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr)
+target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src)
+target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/generic)
 
 add_subdirectory(mpir)
 target_link_libraries(${MODULE_NAME} PUBLIC mpir)
