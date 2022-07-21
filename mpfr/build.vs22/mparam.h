@@ -23,7 +23,26 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 # error "MPFR Internal not included"
 #endif
 
-#if defined( _WIN64 )
+// Check for 32bit vs 64bit
+// Check windows
+#if _WIN32 || _WIN64
+#	if _WIN64
+#		define LIBRAPID_64BIT
+#	else
+#		define LIBRAPID_32BIT
+#	endif
+#endif
+
+// Check GCC
+#if __GNUC__
+#	if __x86_64__ || __ppc64__
+#		define LIBRAPID_64BIT
+#	else
+#		define LIBRAPID_32BIT
+#	endif
+#endif
+
+#if defined( LIBRAPID_64BIT )
 
 #  if 0
 #    include "../src/x86_64/pentium4/mparam.h"
@@ -46,7 +65,7 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 #  else
 #  endif
 
-#elif defined( _WIN32 )
+#elif defined( LIBRAPID_32BIT )
 
 #  if 0
 #    include "../src/x86/core2/mparam.h"
@@ -68,5 +87,4 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
  * it was not previously defined.                               *
  ****************************************************************/
 #include "../src/generic/mparam.h"
-
 #include "endian.h"
