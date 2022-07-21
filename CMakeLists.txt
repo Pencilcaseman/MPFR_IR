@@ -133,7 +133,7 @@ set(PROJECT_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/isregular.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/iszero.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/jn.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/jyn_asympt.c"
+    # "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/jyn_asympt.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/li2.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/lngamma.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src/log.c"
