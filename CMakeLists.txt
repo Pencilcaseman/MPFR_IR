@@ -265,9 +265,9 @@ set(PROJECT_SOURCES
 )
 
 add_library(${MODULE_NAME} STATIC ${PROJECT_SOURCES})
-target_include_directories(${MODULE_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mpfr)
-target_include_directories(${MODULE_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src)
-target_include_directories(${MODULE_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/build.vs22)
+target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr)
+target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src)
+target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/build.vs22)
 
 target_compile_definitions(${MODULE_NAME} PRIVATE "HAVE_CONFIG_H")
 
