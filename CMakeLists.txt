@@ -269,6 +269,8 @@ target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpf
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src)
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/build.vs22)
 
+target_compile_definitions(${MODULE_NAME} PRIVATE "HAVE_CONFIG_H")
+
 add_subdirectory(mpir)
 target_link_libraries(${MODULE_NAME} PUBLIC mpir)
 
