@@ -269,6 +269,16 @@ target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpf
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/src)
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpfr/build.vs22)
 
+target_compile_definitions(${MODULE_NAME} PRIVATE
+    "WIN32"
+    "_WIN32"
+    "HAVE_CONFIG_H"
+    "_LIB"
+    "_GMP_IEEE_FLOATS"
+    "_CRT_SECURE_NO_WARNINGS"
+    "MPFR_HAVE_GMP_IMPL"
+)
+
 add_subdirectory(mpir)
 target_link_libraries(${MODULE_NAME} PUBLIC mpir)
 

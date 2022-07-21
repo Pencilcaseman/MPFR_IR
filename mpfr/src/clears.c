@@ -25,7 +25,11 @@ https://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 # include "config.h"
 #endif
 
+#if HAVE_STDARG
 # include <stdarg.h>
+#else
+# include <varargs.h>
+#endif
 
 #include "mpfr-impl.h"
 
