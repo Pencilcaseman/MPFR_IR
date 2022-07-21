@@ -417,11 +417,7 @@ parse_arg_type (const char *format, struct printf_spec *specinfo)
    to int (because wchar_t <= int).
    For wint_t, we assume that the case WINT_MAX < INT_MAX yields an
    integer promotion. */
-#if defined(WINT_MAX) && WINT_MAX < INT_MAX
 typedef int    mpfr_va_wint;  /* integer promotion */
-#else
-typedef wint_t mpfr_va_wint;
-#endif
 #define CASE_LONG_ARG(specinfo, ap)                                     \
   case LONG_ARG:                                                        \
   if ((specinfo).spec == 'd' || (specinfo).spec == 'i'                  \
