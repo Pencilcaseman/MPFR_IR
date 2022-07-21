@@ -272,7 +272,7 @@ target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpf
 target_compile_definitions(${MODULE_NAME} PRIVATE "HAVE_CONFIG_H")
 
 add_subdirectory(mpir)
-target_link_libraries(${MODULE_NAME} PRIVATE mpir)
+target_link_libraries(${MODULE_NAME} PUBLIC mpir)
 
 # Disable warnings because they're really annoying
 target_compile_options(${MODULE_NAME} PRIVATE
