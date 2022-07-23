@@ -28,6 +28,8 @@ https://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 # include "config.h"
 #endif
 
+#include "mpfr_endian.h"
+
 
 /******************************************************
  *****************  Standard headers  *****************
