@@ -267,6 +267,7 @@ set(PROJECT_SOURCES
 if (WIN32)
     add_library(${MODULE_NAME} STATIC patch.c)
     add_subdirectory(mpir)
+    target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mpir/mpir)
     target_link_libraries(${MODULE_NAME} PUBLIC mpir64 mpfr64)
 else ()
     add_library(${MODULE_NAME} STATIC ${PROJECT_SOURCES})
