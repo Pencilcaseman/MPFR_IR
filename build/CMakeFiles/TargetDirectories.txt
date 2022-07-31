@@ -1,3 +1,0 @@
-C:/opt/mpfr/build/CMakeFiles/mpfr.dir
-C:/opt/mpfr/build/CMakeFiles/ALL_BUILD.dir
-C:/opt/mpfr/build/CMakeFiles/ZERO_CHECK.dir
