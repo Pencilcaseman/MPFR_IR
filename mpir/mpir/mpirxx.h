@@ -204,7 +204,7 @@ struct __gmp_binary_plus
   {
     // Ideally, those checks should happen earlier so that the tree
     // generated for a+0+b would just be sum(a,b).
-    if (__GMPXX_CONSTANT(l) && l == 0)
+    if constexpr (__GMPXX_CONSTANT(l) && l == 0)
     {
       if (z != w) mpz_set(z, w);
     }
@@ -232,7 +232,7 @@ struct __gmp_binary_plus
 
   static void eval(mpq_ptr q, mpq_srcptr r, mpir_ui l)
   {
-    if (__GMPXX_CONSTANT(l) && l == 0)
+    if constexpr (__GMPXX_CONSTANT(l) && l == 0)
     {
       if (q != r) mpq_set(q, r);
     }
@@ -314,7 +314,7 @@ struct __gmp_binary_minus
 
   static void eval(mpz_ptr z, mpz_srcptr w, mpir_ui l)
   {
-    if (__GMPXX_CONSTANT(l) && l == 0)
+    if constexpr (__GMPXX_CONSTANT(l) && l == 0)
     {
       if (z != w) mpz_set(z, w);
     }
@@ -323,7 +323,7 @@ struct __gmp_binary_minus
   }
   static void eval(mpz_ptr z, mpir_ui l, mpz_srcptr w)
   {
-    if (__GMPXX_CONSTANT(l) && l == 0)
+    if constexpr (__GMPXX_CONSTANT(l) && l == 0)
     {
       mpz_neg(z, w);
     }
@@ -357,7 +357,7 @@ struct __gmp_binary_minus
 
   static void eval(mpq_ptr q, mpq_srcptr r, mpir_ui l)
   {
-    if (__GMPXX_CONSTANT(l) && l == 0)
+    if constexpr (__GMPXX_CONSTANT(l) && l == 0)
     {
       if (q != r) mpq_set(q, r);
     }
@@ -469,7 +469,7 @@ struct __gmp_binary_lshift
 {
   static void eval(mpz_ptr z, mpz_srcptr w, mp_bitcnt_t l)
   {
-    if (__GMPXX_CONSTANT(l) && (l == 0))
+    if constexpr (__GMPXX_CONSTANT(l) && (l == 0))
     {
       if (z != w) mpz_set(z, w);
     }
@@ -478,7 +478,7 @@ struct __gmp_binary_lshift
   }
   static void eval(mpq_ptr q, mpq_srcptr r, mp_bitcnt_t l)
   {
-    if (__GMPXX_CONSTANT(l) && (l == 0))
+    if constexpr (__GMPXX_CONSTANT(l) && (l == 0))
     {
       if (q != r) mpq_set(q, r);
     }
@@ -493,7 +493,7 @@ struct __gmp_binary_rshift
 {
   static void eval(mpz_ptr z, mpz_srcptr w, mp_bitcnt_t l)
   {
-    if (__GMPXX_CONSTANT(l) && (l == 0))
+    if constexpr (__GMPXX_CONSTANT(l) && (l == 0))
     {
       if (z != w) mpz_set(z, w);
     }
@@ -502,7 +502,7 @@ struct __gmp_binary_rshift
   }
   static void eval(mpq_ptr q, mpq_srcptr r, mp_bitcnt_t l)
   {
-    if (__GMPXX_CONSTANT(l) && (l == 0))
+    if constexpr (__GMPXX_CONSTANT(l) && (l == 0))
     {
       if (q != r) mpq_set(q, r);
     }
